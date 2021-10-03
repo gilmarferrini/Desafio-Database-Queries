@@ -17,7 +17,6 @@ export class GamesRepository implements IGamesRepository {
     .createQueryBuilder("game")
     .where("game.title ilike :title", { title: `%${param}%` })
     .getMany()
-  // Complete usando query builder
     return games;
   }
 
@@ -31,6 +30,5 @@ export class GamesRepository implements IGamesRepository {
       .relation("users")
       .of(id)
       .loadMany()
-      // Complete usando query builder
   }
 }
